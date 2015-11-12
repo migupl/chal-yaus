@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Oopps!!</title>
+    <title>Client Url Shortener</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!-- Bootstrap -->
@@ -22,17 +22,26 @@
     <[endif]-->
 </head>
 <body>
+
     <nav th:replace="navbar :: top-navbar"></nav>
 
     <div class="container wrap">
-        <blockquote>
-            <p style="font-size: 1.5em;">
-                Lo sentimos, algo ha pasado y no lo esper&aacute;bamos.
-            </p>
-            <footer>
-                Por favor, <a href="/">volvamos al inicio <span class="glyphicon glyphicon-home"></span></a>.
-            </footer>
-        </blockquote>
+        <div class="row well">
+            <form class="form-horizontal row" role="form" action="/shortener">
+                <div class="form-group">
+                    <label for="typed_url" class="col-xs-2 control-label">Paste your long url</label>
+
+                    <div class="col-xs-9">
+                        <input id="typed_url" name="typed_url" type="url" value=""
+                               class="form-control"
+                               autofocus="on" role="textbox"
+                               required="required" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success col-sm-offset-2">Shortener url</button>
+
+            </form>
+        </div>
     </div>
 
     <footer class="footer-content">
@@ -40,5 +49,6 @@
             <div th:include="footer :: copyright-footer"></div>
         </div>
     </footer>
+
 </body>
 </html>
