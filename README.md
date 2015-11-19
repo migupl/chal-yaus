@@ -5,7 +5,7 @@
 * OSOCO challenge [YAUS: Yet Another URL Shortener](https://gist.github.com/luque/7803091)
 * Version 0.1
 
-## How to run without gradle task
+## How to run without gradle run task
 
 Write into the command line from root project folder
 
@@ -18,3 +18,6 @@ This command packages our application into an executable jar file com.osoco.chal
 ```sh
 $ clear && java -jar build/libs/com.osoco.challenge.yaus-0.0.1-SNAPSHOT.jar
 ```
+
+and then, obviously, [request it from your browser](http://localhost:8080/)
+
