@@ -26,20 +26,32 @@
     <nav th:replace="navbar :: top-navbar"></nav>
 
     <div class="container wrap">
-        <div class="row well">
-            <form class="form-horizontal row" role="form" action="/shortener">
+        <div class="well">
+            <!--<form id="shortener" class="form-horizontal" role="form" action="/shortener">-->
+            <form id="shortener" class="form-horizontal" role="form" action="#" th:object="${shortenUrl}">
                 <div class="form-group">
-                    <label for="typed_url" class="col-xs-2 control-label">Paste your long url</label>
+                    <div class="row">
+                        <label for="typed" class="col-xs-12 col-sm-2 control-label">Paste your long url</label>
 
-                    <div class="col-xs-9">
-                        <input id="typed_url" name="typed_url" type="url" value=""
-                               class="form-control"
-                               autofocus="on" role="textbox"
-                               required="required" />
+                        <div class="col-xs-12 col-sm-9">
+                            <input id="typed" type="url" th:name="*{typed}" th:field="*{typed}" value=""
+                                   class="form-control"
+                                   autofocus="on" role="textbox"
+                                   required="required" />
+                        </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success col-sm-offset-2">Shortener url</button>
-
+                <div class="row">
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
+                        <button type="submit" class="btn btn-success">Shorten url</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-3 col-sm-4">
+                        <input id="shorten"  th:name="*{shorten}" th:field="*{shorten}" value=""
+                               class="pull-right form-control bg-success"
+                               data-toggle="tooltip" data-placement="top" title="Press CTRL+C to copy"
+                               data-container="body" />
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -50,5 +62,51 @@
         </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $('#shorten').hide();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            var json;
+            function addFormElements(element, index, array) {
+                if (!index) {
+                    json = new Object();
+                }
+                json[element.name] = element.value;
+            };
+
+            function getAbsolute(path) {
+                return location.origin + '/' + path;
+            }
+
+            $('#shortener').submit(function(event) {
+
+                /* stop submitting */
+                event.preventDefault();
+
+                $('#shortener').serializeArray().forEach(addFormElements);
+
+                $.ajax({
+                    url: $(this).attr( 'action' ),
+                    data: JSON.stringify(json),
+                    type: "POST",
+
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Accept", "application/json");
+                        xhr.setRequestHeader("Content-Type", "application/json");
+                    },
+                    success: function(data) {
+                        if (data.shorten) {
+                            $('#shorten').val(getAbsolute(data.shorten));
+                            $('#shorten').show();
+                            $('#shorten').select();
+                        }
+                    }
+                })
+            });
+        });
+    </script>
 </body>
 </html>
