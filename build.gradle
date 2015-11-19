@@ -33,10 +33,23 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile("org.springframework.boot:spring-boot-starter-undertow")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test') 
+    testCompile('com.jayway.jsonpath:json-path')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "YAUS Challenge",
+                "Implementation-Version": version,
+                "Main-Class": "com.osoco.challenge.yaus.OsocoChallengeYausApplication",
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
 }
