@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus.model;
+package com.osoco.challenge.yaus.domain;
 
 /**
    See <a href="http://www.geeksforgeeks.org/how-to-design-a-tiny-url-or-url-shortener/" />
@@ -16,7 +16,7 @@ public class ShortenAlgorithm {
 
             // use above map to store actual character
             // in short url
-            shorturl.append(SHORT_URL_CHARSET.charAt((int)(id % 62L)));
+            shorturl.append(SHORT_URL_CHARSET.charAt((int) (id % 62L)));
             id = id / 62L;
         }
 

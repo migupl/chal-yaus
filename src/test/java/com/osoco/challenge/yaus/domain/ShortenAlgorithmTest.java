@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus.model;
+package com.osoco.challenge.yaus.domain;
 
 import org.junit.Test;
 
