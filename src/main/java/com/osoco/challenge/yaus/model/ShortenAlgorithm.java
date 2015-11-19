@@ -8,7 +8,7 @@ public class ShortenAlgorithm {
     // 62 possible characters
     private static final String SHORT_URL_CHARSET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    public static String getShortUrl(int id) {
+    public static String getShortUrl(long id) {
         StringBuilder shorturl = new StringBuilder();
 
         // Convert given integer id to a base 62 number
@@ -16,17 +16,17 @@ public class ShortenAlgorithm {
 
             // use above map to store actual character
             // in short url
-            shorturl.append(SHORT_URL_CHARSET.charAt(id % 62));
-            id = id / 62;
+            shorturl.append(SHORT_URL_CHARSET.charAt((int)(id % 62L)));
+            id = id / 62L;
         }
 
         // Reverse shortURL to complete base conversion
         return shorturl.reverse().toString();
     }
 
-    public static int getId(String shortUrl) {
+    public static long getId(String shortUrl) {
         return shortUrl.chars()
-                .mapToObj(i -> SHORT_URL_CHARSET.indexOf(i))
-                .reduce(0, (a, b) -> a * 62 + b);
+                .mapToObj(i -> (long) SHORT_URL_CHARSET.indexOf(i))
+                .reduce(0L, (a, b) -> a * 62L + b);
     }
 }
