@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus.configuration;
+package com.challenge.yaus.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

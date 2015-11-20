@@ -1,7 +1,7 @@
-package com.osoco.challenge.yaus.controllers;
+package com.challenge.yaus.controllers;
 
-import com.osoco.challenge.yaus.domain.ShortenUrl;
-import com.osoco.challenge.yaus.services.YausService;
+import com.challenge.yaus.services.YausService;
+import com.challenge.yaus.domain.ShortenUrl;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,6 +39,7 @@ public class YausController {
             return redirect;
 
         } catch (NotFoundException e) {
+            // No meaning
         }
 
         String redirect = "404";

@@ -1,7 +1,7 @@
-package com.osoco.challenge.yaus.services;
+package com.challenge.yaus.services;
 
-import com.osoco.challenge.yaus.domain.ShortenUrl;
-import com.osoco.challenge.yaus.domain.Urls;
+import com.challenge.yaus.domain.ShortenUrl;
+import com.challenge.yaus.domain.Urls;
 import javassist.NotFoundException;
 import org.springframework.stereotype.Component;
 

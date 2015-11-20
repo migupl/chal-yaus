@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus.domain;
+package com.challenge.yaus.domain;
 
 /**
    See <a href="http://www.geeksforgeeks.org/how-to-design-a-tiny-url-or-url-shortener/" />

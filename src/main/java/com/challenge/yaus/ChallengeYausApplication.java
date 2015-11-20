@@ -1,12 +1,12 @@
-package com.osoco.challenge.yaus;
+package com.challenge.yaus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OsocoChallengeYausApplication {
+public class ChallengeYausApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OsocoChallengeYausApplication.class, args);
+        SpringApplication.run(ChallengeYausApplication.class, args);
     }
 }

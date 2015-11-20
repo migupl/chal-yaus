@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus.domain;
+package com.challenge.yaus.domain;
 
 import org.junit.Before;
 import org.junit.Test;

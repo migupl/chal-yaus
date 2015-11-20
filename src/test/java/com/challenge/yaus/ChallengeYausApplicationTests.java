@@ -1,4 +1,4 @@
-package com.osoco.challenge.yaus;
+package com.challenge.yaus;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -16,10 +16,10 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = OsocoChallengeYausApplication.class)
+@SpringApplicationConfiguration(classes = ChallengeYausApplication.class)
 @WebAppConfiguration
 @IntegrationTest("server.port=0")
-public abstract class OsocoChallengeYausApplicationTests {
+public abstract class ChallengeYausApplicationTests {
 
 	@Value("${local.server.port}")
 	private int port;

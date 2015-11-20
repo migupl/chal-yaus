@@ -18,7 +18,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management' 
 
 jar {
-    baseName = 'com.osoco.challenge.yaus'
+    baseName = 'com.challenge.yaus'
     version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -48,7 +48,7 @@ jar {
         attributes(
                 "Implementation-Title": "YAUS Challenge",
                 "Implementation-Version": version,
-                "Main-Class": "com.osoco.challenge.yaus.OsocoChallengeYausApplication",
+                "Main-Class": "com.challenge.yaus.ChallengeYausApplication",
                 "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
         )
     }

@@ -1,9 +1,9 @@
-package com.osoco.challenge.yaus.controllers;
+package com.challenge.yaus.controllers;
 
+import com.challenge.yaus.ChallengeYausApplicationTests;
+import com.challenge.yaus.domain.ShortenUrl;
+import com.challenge.yaus.services.YausService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.osoco.challenge.yaus.OsocoChallengeYausApplicationTests;
-import com.osoco.challenge.yaus.domain.ShortenUrl;
-import com.osoco.challenge.yaus.services.YausService;
 import javassist.NotFoundException;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-public class YausControllerTests extends OsocoChallengeYausApplicationTests {
+public class YausControllerTests extends ChallengeYausApplicationTests {
 
     private static final String ENDPOINT = "/";
 
