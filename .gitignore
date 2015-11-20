@@ -1,0 +1,7 @@
+.idea/*
+gradle/*
+*.iml
+.gradle/*
+build/*
+target/*
+FEEDBACK.txt
