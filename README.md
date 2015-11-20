@@ -1,23 +1,27 @@
-# README #
+# YAUS (Yet Another URL Shortener) Challenge
 
-### What is this repository for? ###
-
-* OSOCO challenge [YAUS: Yet Another URL Shortener](https://gist.github.com/luque/7803091)
-* Version 0.1
+Basic implementation of main use cases
 
 ## How to run without gradle run task
 
 Write into the command line from root project folder
 
 ```sh
-$ clear && gradle clean build
+$ clear && ./gradlew clean build
 ```
 
-This command packages our application into an executable jar file com.osoco.challenge.yaus-<version>.jar that we can running with
+This command packages our application into an executable jar file com.challenge.yaus-<version>.jar that we can running with
 
 ```sh
-$ clear && java -jar build/libs/com.osoco.challenge.yaus-0.0.1-SNAPSHOT.jar
+$ clear && java -jar build/libs/com.challenge.yaus-0.0.1-SNAPSHOT.jar
 ```
 
 and then, obviously, [request it from your browser](http://localhost:8080/)
 
+## Note
+
+Using:
+
+- Java 8, Spring Boot, JUnit ...
+- Gradle 2.7
+- MVC, AJAX
