@@ -1,7 +1,7 @@
 package com.challenge.yaus.domain;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Simulate database info
@@ -9,7 +9,7 @@ import java.util.Map;
 public class Urls {
 
     // Capacity and load factor should be fixed (it's not needed at this point)
-    private Map<Integer, String> urls = new HashMap<Integer, String>();
+    private Map<Integer, String> urls = new ConcurrentHashMap<Integer, String>();
 
     private static final long STEP_TO_POSITIVE = (long) Integer.MAX_VALUE + 2;
 
